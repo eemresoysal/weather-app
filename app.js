@@ -1,5 +1,6 @@
 const getData = (cityname) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=c460d0183897f275d6ea98399e221867&units=metric&lang=tr`;
+
   fetch(url)
     .then((res) => {
       return res.json();
@@ -30,7 +31,6 @@ const cityWeather = (data) => {
 
   image.innerHTML = `<img class="icon" src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="" >`;
 };
-
 const input = document.querySelector("#box");
 
 input.addEventListener("change", (event) => {
